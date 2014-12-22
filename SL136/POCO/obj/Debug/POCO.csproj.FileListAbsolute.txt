@@ -1,0 +1,4 @@
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\POCO\bin\Debug\POCO.dll
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\POCO\bin\Debug\POCO.pdb
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\POCO\obj\Debug\POCO.dll
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\POCO\obj\Debug\POCO.pdb

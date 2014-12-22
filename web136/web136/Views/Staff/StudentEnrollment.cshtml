@@ -1,0 +1,53 @@
+﻿@{
+    var id = ViewBag.Id;
+}
+<h3>All Enrollments</h3>
+
+<div id="divStudentEnrollment">
+    <table>
+        <thead>
+            <tr>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduleid' }">Id</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'coursetitle' }">Course Title</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'coursedescription' }">Course Description</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'year' }">Year</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'quarter' }">Quarter</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'session' }">Session</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'unit' }">Units</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduleday' }">Schedule Day</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduletime' }">Schedule Time</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'lastname' }">Instructor</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'grade' }">Grade</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: scheduleid"></td>
+                <td data-bind="text: coursetitle"></td>
+                <td data-bind="text: coursedescription"></td>
+                <td data-bind="text: year"></td>
+                <td data-bind="text: quarter"></td>
+                <td data-bind="text: session"></td>
+                <td data-bind="text: unit"></td>
+                <td data-bind="text: scheduleday"></td>
+                <td data-bind="text: scheduletime"></td>
+                <td data-bind="text: lastname + ', ' + firstname"></td>
+                <td data-bind="text: grade"></td>
+                <td>
+                    <a data-bind="attr: {href: '/Staff/EditGrade?id=@id&sched='+scheduleid, title: 'grade' }">grade</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/EnrollmentViewModel'], function (enrollmentViewModel) {
+            var enrollmentViewModelObj = new enrollmentViewModel();
+            enrollmentViewModelObj.GetAllEnroll("@id");
+        });
+    });
+</script>

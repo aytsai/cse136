@@ -1,0 +1,9 @@
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\bin\Debug\136Repository.dll
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\bin\Debug\136Repository.pdb
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\bin\Debug\136IRepository.dll
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\bin\Debug\POCO.dll
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\bin\Debug\136IRepository.pdb
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\bin\Debug\POCO.pdb
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\obj\Debug\136Repository.dll
+C:\Users\Mei\Desktop\UCSD 2012-2013\CSE 136\SL136\DAL\obj\Debug\136Repository.pdb

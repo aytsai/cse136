@@ -1,0 +1,25 @@
+﻿@{
+    var id = ViewBag.Id;
+}
+<h3>Edit</h3>
+
+<div id="divInstructorEdit">
+    First : <input type="text" data-bind="value: $data.first" /><br />
+    <br />
+    Last : <input type="text" data-bind="value: $data.last" /><br />
+    <br />
+    Title : <input type="text" data-bind="value: $data.title" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/InstructorViewModel'], function (instructorViewModel) {
+            var instructorViewModelObj = new instructorViewModel();
+            instructorViewModelObj.Load("@id");
+        });
+    });
+</script>

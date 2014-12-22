@@ -1,0 +1,43 @@
+﻿body {
+  background-color: #CEF6F5;
+}
+#divLogin {
+  border: 1px solid gray;
+  width: 400px;
+  padding-left: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#divLogin .labelClass {
+  display: inline-block;
+  width: 70px;
+  margin-bottom: 4px;
+}
+#divLogin .inputClass {
+  width: 150px;
+  margin-bottom: 4px;
+}
+#divLogin #idSubmitButton {
+  margin-left: 100px;
+}
+#tableStudentList th {
+  text-align: center;
+}
+#tableStudentList td {
+  width: 100px;
+  border: 1px solid lightgray;
+}
+#tableScheduleList th {
+  text-align: center;
+}
+#tableScheduleList td {
+  min-width: 100px;
+  border: 1px solid lightgray;
+}
+#tableStudentEnrollment th {
+  text-align: center;
+}
+#tableStudentEnrollment td {
+  min-width: 100px;
+  border: 1px solid lightgray;
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Hire Instructor";
+}
+
+<h3>Hire a new Instructor</h3>
+<a href="/Admin/InstructorList"><< back</a>
+<div id="divInstructor">
+    <table>
+        <tr>
+            <td>First</td>
+            <td><input data-bind="value: first" /></td>
+        </tr>
+        <tr>
+            <td>Last</td>
+            <td><input data-bind="value: last" /></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input data-bind="value: title" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button data-bind="click: add">Add</button></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/InstructorViewModel'], function (instructorViewModel) {
+            var instructorViewModelObj = new instructorViewModel();
+            instructorViewModelObj.Initialize();
+        });
+    });
+</script>

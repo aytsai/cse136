@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="~/Scripts/knockout-2.2.1.js"></script>
+
+    <link href="/Content/136.less" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.tablesorter.pager.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/require.js")"></script>
+
+    <script type="text/javascript">
+        $.support.cors = true;
+
+        require.config({
+            baseUrl: "@Url.Content("~/Scripts/136Libraries")",
+            // Cache buster so the files are not cached during development/debuggin
+            urlArgs: "bust=" + (new Date()).getTime()
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="headerClass" style="float:left;">
+            <h1>136 Enterprise-Class Web Applications</h1>
+        </div>
+        <div style="margin-top:30px; padding-left:50px;float:left"><a href="/Login/LogOff">logout</a></div>
+        <div style="margin-top:30px; padding-left:50px;float:left"><a href="/JasmineTest/Index">Run Service Tests</a></div>
+        <div style="clear:both"></div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <hr />
+                <p>&copy; @DateTime.Now.Year (there is no actual copy right material here)</p>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

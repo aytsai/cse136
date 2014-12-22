@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "New Schedule Day";
+}
+
+<h3>New ScheduleDay</h3>
+<div id="divScheduleDay">
+    <table>
+        <tr>
+            <td>Schedule Day</td>
+            <td><input data-bind="value: scheduleday" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button data-bind="click: add">Add</button></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/ScheduleDayViewModel'], function (scheduleDayViewModel) {
+            var scheduleDayViewModelObj = new scheduleDayViewModel();
+            scheduleDayViewModelObj.Initialize();
+        });
+    });
+</script>

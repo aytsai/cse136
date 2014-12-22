@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "ScheduleTime";
+}
+
+<h3>ScheduleTime List Page</h3>
+
+Cascades are not implemented, careful of what you delete.
+<div id="divScheduleTimeListContent">
+    <table>
+        <thead>
+            <tr>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduletimeid' }">Id</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduletime' }">Schedule Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: scheduletimeid"></td>
+                <td data-bind="text: scheduletime"></td>
+                <td>
+                    <a data-bind="attr: { href : '/Admin/EditScheduleTime?id=' + scheduletimeid, title: 'edit' }">edit</a>
+                    <a data-bind="DeleteScheduleTime: $data">delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a data-bind="attr: { href : '/Admin/CreateScheduleTime', title: 'create' }">Add new schedule time</a>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/ScheduleTimeViewModel'], function (scheduleTimeViewModel) {
+            var scheduleTimeViewModelObj = new scheduleTimeViewModel();
+            scheduleTimeViewModelObj.GetAll();
+        });
+    });
+</script>

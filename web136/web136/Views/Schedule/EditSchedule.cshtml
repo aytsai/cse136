@@ -1,0 +1,36 @@
+﻿@{
+    var id = ViewBag.Id;
+}
+<h3>Edit Section</h3>
+
+Improvement: select.
+<div id="divScheduleEdit">
+    Course Id : <input type="text" data-bind="value: $data.courseid" /><br />
+    <br />
+    Year : <input type="text" data-bind="value: $data.year" /><br />
+    <br />
+    Quarter : <input type="text" data-bind="value: $data.quarter" /><br />
+    <br />
+    Session : <input type="text" data-bind="value: $data.session" /><br />
+    <br />
+    Units : <input type="text" data-bind="value: $data.unit" /><br />
+    <br />
+    Schedule Day Id : <input type="text" data-bind="value: $data.scheduledayid" /><br />
+    <br />
+    Schedule Time Id : <input type="text" data-bind="value: $data.scheduletimeid" /><br />
+    <br />
+    Instructor Id : <input type="text" data-bind="value: $data.instructorid" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/ScheduleViewModel'], function (scheduleViewModel) {
+            var scheduleViewModelObj = new scheduleViewModel();
+            scheduleViewModelObj.Load(@id);
+        });
+    });
+</script>

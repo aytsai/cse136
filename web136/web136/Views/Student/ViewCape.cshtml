@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "ViewCape";
+    var id = ViewBag.Id;
+    var id2 = ViewBag.Id2;  
+}
+
+<h2>ViewCape</h2>
+
+<div id="divCapeContent">
+    <table>
+        <thead>
+            <td><b>Review</b></td>
+        </thead>
+        <tr>
+            <td data-bind="text: viewModel.review"></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/StudentViewModel'], function (studentViewModel) {
+            var studentViewModelObj = new studentViewModel();
+            studentViewModelObj.ViewCape("@id", @id2);
+        });
+    });
+</script>

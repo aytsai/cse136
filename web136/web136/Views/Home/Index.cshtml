@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+<h2>Welcome to CSE 136 Enterprise web-applications.</h2>
+Quick Login <a href="/Login">as Staff</a>, <a href="/Login/Index2">as Admin</a>, <a href="/Login/Index4">as John Doe</a>
+
+
+<hr />
+The following are loaded by using ajax call and knockoutjs (MVVM pattern):
+
+<div id="divCourseListContent">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: title"></td>
+                <td data-bind="text: description"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/CourseListViewModel'], function (courseListViewModel) {
+                var courseListViewModelObj = new courseListViewModel();
+                courseListViewModelObj.Load();
+        });
+    });
+</script>

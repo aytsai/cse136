@@ -1,0 +1,35 @@
+﻿@{
+    var id = ViewBag.Id;
+}
+<h3>Edit</h3>
+
+<div id="divStudentEdit">
+    First : <input type="text" data-bind="value: $data.first" /><br />
+    <br />
+    Last : <input type="text" data-bind="value: $data.last" /><br />
+    <br />
+    Id : <input type="text" data-bind="value: $data.id" /><br />
+    <br />
+    SSN : <input type="text" data-bind="value: $data.ssn" /><br />
+    <br />
+    Email : <input type="text" data-bind="value: $data.email" /><br />
+    <br />
+    Password : <input type="text" data-bind="value: $data.password" /><br />
+    <br />
+    Shoe Size : <input type="text" data-bind="value: $data.shoesize" /><br />
+    <br />
+    Weight : <input type="text" data-bind="value: $data.weight" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/StudentViewModel'], function (studentViewModel) {
+            var studentViewModelObj = new studentViewModel();
+            studentViewModelObj.Load("@id");
+        });
+    });
+</script>

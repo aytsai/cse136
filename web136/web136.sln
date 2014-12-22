@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web136", "web136\web136.csproj", "{A96FDFF4-93A5-49B0-97CF-2E9CD92ECA11}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.8.112:8080/tfs/agluxe
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = web136\\web136.csproj
+		SccProjectName1 = web136
+		SccLocalPath1 = web136
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A96FDFF4-93A5-49B0-97CF-2E9CD92ECA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A96FDFF4-93A5-49B0-97CF-2E9CD92ECA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A96FDFF4-93A5-49B0-97CF-2E9CD92ECA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A96FDFF4-93A5-49B0-97CF-2E9CD92ECA11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

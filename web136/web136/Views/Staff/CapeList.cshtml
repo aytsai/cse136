@@ -1,0 +1,37 @@
+﻿@{
+    var id = ViewBag.id;
+    ViewBag.Title = "CAPE List";
+}
+<h3>CAPE List</h3>
+
+<div id="divCapeListContent">
+    view all button (redirects to this page with diff parameters), view by quarter etc
+    <table>
+        <thead>
+            <tr>
+                <th>Course Title</th>
+                <th>Quarter</th>
+                <th>Year</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: coursetitle"></td>
+                <td data-bind="text: quarter"></td>
+                <td data-bind="text: year"></td>
+                <td data-bind="text: review"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/InstructorViewModel'], function (instructorViewModel) {
+            var instructorViewModelObj = new instructorViewModel();
+            instructorViewModelObj.GetAllCape(@id);
+        });
+    });
+</script>

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Login</h2>
+<div id="divLogin">
+    <label class="labelClass">User Name</label>
+    <input type="text" data-bind="value: email" class="inputClass" />
+    <br />
+    <label class="labelClass">Password</label>
+    <input type="password" data-bind="value: password" class="inputClass" />
+    <br />
+    <input type="button" value="Login" data-bind="click: authorize" id="idSubmitButton" />
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/LoginViewModel'], function (loginViewModel) {
+            var loginViewModelObj = new loginViewModel();
+            loginViewModelObj.Initialize();
+        });
+    });
+</script>

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var year = ViewBag.year;
+    var quarter = ViewBag.quarter;
+}
+
+<h3>Schedule of classes</h3>
+
+<div id="divScheduleListContent">
+Cascades aren't implemented; be careful of what is deleted.
+    <table>
+        <tr>
+            <td>Year</td>
+            <td><input id = "year"/></td>
+        </tr>
+        <tr>
+            <td>Quarter</td>
+            <td><input id = "quarter" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="search()">Search</button></td>
+        </tr>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduleid' }">Id</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'coursetitle' }">Course Title</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'coursedescription' }">Course Description</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'year' }">Year</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'quarter' }">Quarter</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'session' }">Session</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'unit' }">Units</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduleday' }">Schedule Day</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'scheduletime' }">Schedule Time</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'lastname' }">Instructor</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: scheduleid"></td>
+                <td data-bind="text: coursetitle"></td>
+                <td data-bind="text: coursedescription"></td>
+                <td data-bind="text: year"></td>
+                <td data-bind="text: quarter"></td>
+                <td data-bind="text: session"></td>
+                <td data-bind="text: unit"></td>
+                <td data-bind="text: scheduleday"></td>
+                <td data-bind="text: scheduletime"></td>
+                <td data-bind="text: lastname + ', ' + firstname"></td>
+                <td>
+                    <a data-bind="attr: { href : '/Schedule/EditSchedule?id='+scheduleid, title: 'update' }">update</a>
+                    <a data-bind="DeleteSchedule: scheduleid">delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br /><a data-bind="attr: { href : '/Schedule/CreateSchedule', title: 'add' }">add new section</a>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/ScheduleViewModel'], function (scheduleViewModel) {
+            var scheduleViewModelObj = new scheduleViewModel();
+            scheduleViewModelObj.GetAll("@year", "@quarter");
+        });
+    });
+
+    function search()
+    {
+        window.location = "/Schedule/Index?year=" + document.getElementById("year").value + "&quarter=" + document.getElementById("quarter").value;
+    }
+</script>

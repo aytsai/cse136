@@ -1,0 +1,21 @@
+﻿@{
+    var id = ViewBag.Id;
+}
+<h3>Edit</h3>
+
+<div id="divScheduleDayEdit">
+    Schedule Day : <input type="text" data-bind="value: $data.scheduleday" /><br />
+    <br />
+    <input type="button" data-bind="value: 'Update', click: $data.update" style="margin-left:80px" />
+    <br /><br />
+    <div id="divMessage"></div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/ScheduleDayViewModel'], function (scheduleDayViewModel) {
+            var scheduleDayViewModelObj = new scheduleDayViewModel();
+            scheduleDayViewModelObj.Load("@id");
+        });
+    });
+</script>

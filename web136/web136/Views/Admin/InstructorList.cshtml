@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Instructor List Page</h3>
+
+<div id="divInstructorListContent">
+    <table>
+        <thead>
+            <tr>
+                <th data-bind="sort: { arr: viewModel, prop: 'id' }">Id</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'first' }">First</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'last' }">Last</th>
+                <th data-bind="sort: { arr: viewModel, prop: 'title' }">Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: viewModel">
+            <tr>
+                <td data-bind="text: id"></td>
+                <td data-bind="text: first"></td>
+                <td data-bind="text: last"></td>
+                <td data-bind="text: title"></td>
+                <td>
+                    <a data-bind="attr: { href : '/Admin/EditInstructor?id='+id, title: 'update' }">update</a>
+                    <a data-bind="DeleteInstructor: id">fire</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br /><a data-bind="attr: { href : '/Admin/CreateInstructor', title: 'hire' }">hire new instuctor</a>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        require(['ViewModels/InstructorViewModel'], function (instructorViewModel) {
+            var instructorViewModelObj = new instructorViewModel();
+            instructorViewModelObj.GetAll();
+        });
+    });
+</script>
